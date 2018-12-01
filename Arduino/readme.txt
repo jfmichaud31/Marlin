@@ -1,0 +1,1 @@
+Copy hardware folder in Arduino folder to add Anet A8 board support
