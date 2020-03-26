@@ -96,6 +96,9 @@ static inline void _lcd_level_bed_corners_homing() {
           #if HAS_LEVELING
             set_bed_leveling_enabled(leveling_was_active);
           #endif
+          line_to_z(LEVEL_CORNERS_Z_HOP);
+          current_position.set(X_MIN_POS, Y_MAX_POS / 2);
+          line_to_current_position(MMM_TO_MMS(manual_feedrate_mm_m.x));
           ui.goto_previous_screen_no_defer();
         },
         GET_TEXT(
